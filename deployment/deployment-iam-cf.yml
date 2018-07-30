@@ -56,6 +56,14 @@ Resources:
       Users:
         - hackingstudio-marcus
 
+  AdminGroupUsers:
+    Type: AWS::IAM::UserToGroupAddition
+    Properties:
+      GroupName:
+        !Ref AdminGroup
+      Users:
+        - hackingstudio-jannes
+
   DeployBotGroup:
     Type: 'AWS::IAM::Group'
     Properties:
