@@ -1,0 +1,24 @@
+---
+
+Description: 'RUN ONLY ONCE! - Stack used to create a user with console access'
+
+Parameters:
+  Username:
+    Description: Username for User
+    Type: String
+  Password:
+    Description: Password for User
+    Type: String
+    NoEcho: true
+
+Resources:
+  UserMarcus:
+    Type: 'AWS::IAM::User'
+    Properties:
+      Path: '/hackingstudio/'
+      UserName:
+        !Join [ "-", [ 'hackingstudio', !Ref Username ] ]
+      LoginProfile:
+        Password:
+          !Ref Password
+        PasswordResetRequired: true
