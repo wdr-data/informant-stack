@@ -310,9 +310,12 @@ Resources:
                 Action:
                   - 'logs:CreateLogGroup'
                   - 'logs:DeleteLogGroup'
-                  - 'logs:DescribeLogGroups'
                 Resource:
                   - !Sub 'arn:aws:logs:eu-central-1:${AWS::AccountId}:log-group:/aws/lambda/hackingstudio-informant-amp-*:*'
+              - Effect: Allow
+                Action:
+                  - 'logs:DescribeLogGroups'
+                Resource: '*'
               - Effect: Allow
                 Action:
                   - 'iam:PassRole'
