@@ -12,7 +12,7 @@ Parameters:
     NoEcho: true
 
 Resources:
-  UserMarcus:
+  User:
     Type: 'AWS::IAM::User'
     Properties:
       Path: '/hackingstudio/'
