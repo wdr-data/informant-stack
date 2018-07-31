@@ -156,7 +156,7 @@ Resources:
                   - 'dynamodb:DescribeTable'
                   - 'dynamodb:UpdateTable'
                 Resource:
-                  - !Sub 'arn:aws:dynamodb:eu-central-1:${AWS::AccountId}:table/informant-bot-prod-*'
+                  - !Sub 'arn:aws:dynamodb:eu-central-1:${AWS::AccountId}:table/hackingstudio-informant-bot-prod-*'
               - Effect: Allow
                 Action:
                   - 'dynamodb:ListTables'
