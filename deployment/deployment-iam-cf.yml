@@ -256,9 +256,15 @@ Resources:
                 Action:
                   - 's3:CreateBucket'
                   - 's3:DeleteBucket'
+                  - 's3:DeleteBucketWebsite'
+                  - 's3:GetBucketAcl'
+                  - 's3:GetBucketLocation'
+                  - 's3:GetBucketWebsite'
                   - 's3:ListBucket'
                   - 's3:ListBucketVersions'
                   - 's3:PutAccelerateConfiguration'
+                  - 's3:PutBucketAcl'
+                  - 's3:PutBucketWebsite'
                 Resource:
                   - !Sub 'arn:aws:s3:::hackingstudio-informant-amp-*'
               - Effect: Allow
