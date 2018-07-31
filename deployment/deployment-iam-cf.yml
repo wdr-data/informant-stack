@@ -108,6 +108,7 @@ Resources:
                   - !Sub 'arn:aws:s3:::hackingstudio-informant-bot-*/*'
               - Effect: Allow
                 Action:
+                  - 'lambda:AddPermission'
                   - 'lambda:GetFunction'
                   - 'lambda:CreateFunction'
                   - 'lambda:DeleteFunction'
