@@ -48,7 +48,7 @@ Resources:
                 Resource:
                   - !Sub 'arn:aws:iam::${AWS::AccountId}:user/*'
 
-  AdminGroupUsers:
+  AdminGroupUsersMarcus:
     Type: AWS::IAM::UserToGroupAddition
     Properties:
       GroupName:
@@ -71,7 +71,7 @@ Resources:
             Resource:
               - !Sub 'arn:aws:iam::${AWS::AccountId}:user/hackingstudio/hackingstudio-marcus'
 
-  AdminGroupUsers:
+  AdminGroupUsersJannes:
     Type: AWS::IAM::UserToGroupAddition
     Properties:
       GroupName:
