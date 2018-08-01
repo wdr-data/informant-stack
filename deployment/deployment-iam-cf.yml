@@ -36,7 +36,7 @@ Resources:
                   - 'iam:ListAccessKeys'
                   - 'iam:UpdateAccessKey'
                 Resource:
-                  - !Sub 'arn:aws:iam::${AWS::AccountId}:user/hackingstudio/informant/*'
+                  - !Sub 'arn:aws:iam::${AWS::AccountId}:user/hackingstudio/*'
               - Effect: Allow
                 Action:
                   - 'iam:GetAccountPasswordPolicy'
