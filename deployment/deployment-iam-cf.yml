@@ -335,7 +335,7 @@ Resources:
                   - 'apigateway:PUT'
                   - 'apigateway:DELETE'
                 Resource:
-                  - 'arn:aws:apigateway:eu-central-1::/restapis*'
+                  - 'arn:aws:apigateway:eu-central-1::/*'
               - Effect: Allow
                 Action:
                   - 'logs:CreateLogGroup'
