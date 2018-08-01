@@ -79,7 +79,7 @@ Resources:
       Users:
         - hackingstudio-jannes
 
-  UserPolicyMarcus:
+  UserPolicyJannes:
     Type: 'AWS::IAM::Policy'
     Properties:
       Users:
