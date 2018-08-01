@@ -56,6 +56,21 @@ Resources:
       Users:
         - hackingstudio-marcus
 
+  UserPolicyMarcus:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      Users:
+        - hackingstudio-marcus
+      PolicyName: 'hackingstudio-marcus-userinline'
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - 'iam:ChangePassword'
+            Resource:
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:user/hackingstudio/hackingstudio-marcus'
+
   AdminGroupUsers:
     Type: AWS::IAM::UserToGroupAddition
     Properties:
@@ -63,6 +78,21 @@ Resources:
         !Ref AdminGroup
       Users:
         - hackingstudio-jannes
+
+  UserPolicyMarcus:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      Users:
+        - hackingstudio-jannes
+      PolicyName: 'hackingstudio-jannes-userinline'
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - 'iam:ChangePassword'
+            Resource:
+              - !Sub 'arn:aws:iam::${AWS::AccountId}:user/hackingstudio/hackingstudio-jannes'
 
   DeployBotGroup:
     Type: 'AWS::IAM::Group'
