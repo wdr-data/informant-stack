@@ -26,6 +26,7 @@ Resources:
                   - 'acm:*'
                   - 'dynamodb:*'
                   - 'rds:*'
+                  - 'states:*'
                   - 'iam:PassRole'
                 Resource: '*'
               - Effect: Allow
