@@ -274,6 +274,29 @@ Resources:
                   - !Sub 'arn:aws:dynamodb:eu-central-1:${AWS::AccountId}:table/hackingstudio-informant-bot-*'
                 Effect: Allow
 
+  BotStateMachineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                !Sub 'states.eu-central-1.amazonaws.com'
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName:
+            !Sub 'hackingstudio-informant-bot-role-statemachine'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                Resource:
+                  - !Sub 'arn:aws:lambda:eu-central-1:${AWS::AccountId}:function:hackingstudio-informant-bot-*'
+
   DeployAmpGroup:
     Type: 'AWS::IAM::Group'
     Properties:
