@@ -214,6 +214,18 @@ Resources:
                   - route53:GetHostedZone
                   - route53:ListResourceRecordSets
                 Resource: !Sub arn:aws:route53:::hostedzone/Z1VSY3KEFJ69PM
+              - Effect: Allow
+                Action:
+                - 'states:CreateStateMachine'
+                Resource:
+                - !Sub 'arn:aws:states:eu-central-1:${AWS::AccountId}:stateMachine:hackingstudio-informant-bot-*'
+              - Effect: Allow
+                Action:
+                - 'states:DescribeStateMachine'
+                - 'states:DeleteStateMachine'
+                - 'states:UpdateStateMachine'
+                Resource:
+                - !Sub 'arn:aws:states:eu-central-1:${AWS::AccountId}:stateMachine:hackingstudio-informant-bot-*'
 
   DeployBotUser:
     Type: 'AWS::IAM::User'
