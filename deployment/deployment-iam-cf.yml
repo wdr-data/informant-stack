@@ -285,8 +285,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Service:
-                !Sub 'states.eu-central-1.amazonaws.com'
+              Service: 'states.eu-central-1.amazonaws.com'
             Action: sts:AssumeRole
       Policies:
         - PolicyName:
