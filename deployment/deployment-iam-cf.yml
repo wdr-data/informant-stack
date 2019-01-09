@@ -278,6 +278,8 @@ Resources:
   BotStateMachineRole:
     Type: AWS::IAM::Role
     Properties:
+      Path: '/hackingstudio/informant/'
+      RoleName: hackingstudio-informant-bot-statemachine
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
