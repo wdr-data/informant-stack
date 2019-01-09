@@ -171,7 +171,11 @@ Resources:
               - Effect: Allow
                 Action:
                   - 'logs:CreateLogGroup'
+                  - 'logs:CreateLogStream'
                   - 'logs:DeleteLogGroup'
+                  - 'logs:DeleteLogStream'
+                  - 'logs:DescribeLogStreams'
+                  - 'logs:FilterLogEvents'
                   - 'logs:PutMetricFilter'
                 Resource:
                   - !Sub 'arn:aws:logs:eu-central-1:${AWS::AccountId}:log-group:/aws/lambda/hackingstudio-informant-bot-*:*'
@@ -242,6 +246,7 @@ Resources:
                   - !Sub 'arn:aws:logs::${AWS::AccountId}:log-group:/aws/lambda/hackingstudio-informant-bot-*:*'
                 Effect: Allow
               - Action:
+                  - 'logs:CreateLogStream'
                   - 'logs:PutLogEvents'
                 Resource:
                   - !Sub 'arn:aws:logs::${AWS::AccountId}:log-group:/aws/lambda/hackingstudio-informant-bot-*:*:*'
