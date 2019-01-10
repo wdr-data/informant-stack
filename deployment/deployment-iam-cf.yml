@@ -248,6 +248,10 @@ Resources:
             Principal:
               Service: 'lambda.amazonaws.com'
             Effect: Allow
+          - Action: 'sts:AssumeRole'
+            Principal:
+              Service: 'states.amazonaws.com'
+            Effect: Allow
       Policies:
         - PolicyName: hackingstudio-informant-bot-functionsrole
           PolicyDocument:
@@ -285,7 +289,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Service: 'states.eu-central-1.amazonaws.com'
+              Service: 'states.amazonaws.com'
             Action: sts:AssumeRole
       Policies:
         - PolicyName:
