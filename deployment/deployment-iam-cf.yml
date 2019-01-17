@@ -278,6 +278,11 @@ Resources:
                 Resource:
                   - !Sub 'arn:aws:dynamodb:eu-central-1:${AWS::AccountId}:table/hackingstudio-informant-bot-*'
                 Effect: Allow
+              - Action:
+                  - states:StartExecution
+                Resource:
+                  - !Sub 'arn:aws:states:eu-central-1:${AWS::AccountId}:stateMachine:hackingstudio-informant-bot-*'
+                Effect: Allow
 
   BotStateMachineRole:
     Type: AWS::IAM::Role
